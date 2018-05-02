@@ -4,7 +4,7 @@ MP Examples
 This repo shows some examples on the benefits of multiprocessing and how simple
 it can be. 
 
-3 examples I can think of in which Mutlithreading/processing is crucial is (I'm
+Three examples I can think of in which Mutlithreading/processing is crucial is (I'm
   sure there are more):
 
 1. If you have infrequent/sporadic signals coming in. 
@@ -37,3 +37,9 @@ should be used if possible.
 parallelism. Note that queues aren't the only way to signal across processes,
 but they are the one I use the most. You can also check out pipes and locks.
 
+Other
+-----
+For an example of a repo that uses queues and multithreading to load data in
+preparation for deep learning, check out `dataset_loading`__
+
+__ https://github.com/fbcotter/dataset_loading
