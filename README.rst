@@ -1,11 +1,10 @@
 MP Examples
 ===========
 
-This repo shows some examples on the benefits of multiprocessing and how simple
-it can be. 
+This repo shows some examples on the benefits of multiprocessing and how simple it can be. 
 
-Three examples I can think of in which Mutlithreading/processing is crucial is (I'm
-  sure there are more):
+Three examples I can think of in which Mutlithreading/processing is crucial is
+(I'm sure there are more):
 
 1. If you have infrequent/sporadic signals coming in. 
 2. If you want to create a pipeline so that one bit of processing isn't held up
