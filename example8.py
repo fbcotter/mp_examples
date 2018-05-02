@@ -54,15 +54,21 @@ if __name__ == '__main__':
         procs.append(proc)
 
     while True:
+        data = False
         try:
             f, r = result_queue.get(timeout=5)
+            data = True
         except Empty:
             # Check if any of the feeders are still alive, if not, quit
             alive = [proc.is_alive() for proc in procs]
             if True not in alive:
                 print("Timeout on queue retrieval and feeders dead")
                 break
-        print('The result of {} is {:.3}'.format(f, r))
+
+        # Need to check that the queue.get() method above worked - could have
+        # had a timeout and a process was alive
+        if data:
+            print('The result of {} is {:.3}'.format(f, r))
 
     # Don't need to join really, we've already tested that they are all finished
     [proc.join() for proc in procs]
