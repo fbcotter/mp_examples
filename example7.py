@@ -7,7 +7,6 @@ import os
 # Note we import the queue from multiprocessing, but the Empty exception comes
 # from the older queue module
 from multiprocessing import Process, Queue
-from queue import Empty
 import time
 
 files = os.listdir('.')

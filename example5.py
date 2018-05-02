@@ -1,6 +1,7 @@
 """
 A simple example using the Process class rather than pool. Might be better to
-run this in the terminal
+run this in the terminal. Using the process class makes it possible to do
+pipelining and processing data as it comes in.
 """
 import numpy as np
 import os
@@ -20,6 +21,7 @@ def process(files):
         y = np.matmul(x, x)
         results.append(y)
     print("Exiting process")
+
 
 if __name__ == '__main__':
     start_total = time.time()

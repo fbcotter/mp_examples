@@ -10,6 +10,8 @@ files = os.listdir('.')
 files = [f for f in files if os.path.splitext(f)[1] == '.npy']
 files.sort()
 results = []
+# Define the number of processes to spin up
+N = 2
 
 
 def process(f):
@@ -25,7 +27,7 @@ def collect_result(result):
 if __name__ == '__main__':
     start_total = time.time()
 
-    p = Pool(2)
+    p = Pool(N)
     for f in files:
         p.apply_async(process, kwds={'f': f}, callback=collect_result)
     p.close()

@@ -10,6 +10,8 @@ import time
 files = os.listdir('.')
 files = [f for f in files if os.path.splitext(f)[1] == '.npy']
 files.sort()
+# Define the number of processes to spin up
+N = 2
 
 
 def process(f):
@@ -21,7 +23,7 @@ def process(f):
 if __name__ == '__main__':
     start_total = time.time()
 
-    with Pool(2) as p:
+    with Pool(N) as p:
         result = p.map(process, files)
 
     for r, f in zip(result, files):
